@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os, sys
-from core.settings import base
 
 def main():
     """Run administrative tasks."""

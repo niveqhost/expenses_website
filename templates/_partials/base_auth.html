@@ -13,17 +13,11 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    {% block content %}{% endblock content %}
-                </div>
-                <div class="col-md-3"></div>
-            </main>
-        </div>
-    </div>
+
+    <main role="main">
+        {% block content %}{% endblock content %}
+    </main>
+
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
     integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">

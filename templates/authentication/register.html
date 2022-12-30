@@ -16,6 +16,9 @@
                             <label for="username-field" class="form-label">User Name</label>
                             <input type="text" class="form-control" id="username-field" name="username" placeholder="Enter username">
                         </div>
+                        <div class="invalid-feedback" style="display: none">
+                            Please provide a valid city.
+                        </div>
                         <div class="mb-3">
                             <label for="email-field" class="form-label">Email Address</label>
                             <input type="email" name="email" class="form-control" id="email-field" aria-describedby="email-help" placeholder="Enter email">
@@ -39,4 +42,5 @@
         </div>
         <div class="col-md-4"></div>
     </div>
+    <script src="{% static 'js/register.js' %}"></script>
 {% endblock content %}

@@ -32,8 +32,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [
-    # '127.0.0.1',
-    # 'localhost',
+    '127.0.0.1',
+    'localhost',
     'web-production-9f0f.up.railway.app',
 ]
 
@@ -79,7 +79,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

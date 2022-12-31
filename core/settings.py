@@ -34,7 +34,7 @@ DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'web-production-9f0f.up.railway.app',
+    '*',
 ]
 
 # Application definition

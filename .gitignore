@@ -58,7 +58,3 @@ note.txt
 # media/
 # Database query files
 *.sql
-# Static folder
-*/static/*
-static/
-static/*

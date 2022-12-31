@@ -50,15 +50,15 @@ pytestdebug.log
 
 # Log files
 *.log
-
 # Note files
 note.txt
-
 # Translations
 *.mo
-
 # Media
 # media/
-
 # Database query files
 *.sql
+# Static folder
+*/static/*
+static/
+static/*

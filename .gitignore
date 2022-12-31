@@ -59,6 +59,6 @@ note.txt
 # Database query files
 *.sql
 # Static folder
-*/staticfiles/*
-staticfiles/
-staticfiles/*
+*/static/*
+static/
+static/*

@@ -5,3 +5,4 @@ mysqlclient==2.1.1
 python-decouple==3.6
 sqlparse==0.4.3
 tzdata==2022.7
+validate-email==1.3

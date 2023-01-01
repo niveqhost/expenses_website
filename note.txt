@@ -1,0 +1,9 @@
+TODO:
+Truoc khi commit va push len git can xoa thu muc staticfiles va chay lenh manage.py collectstatic
+
+QUESTION:
+Khi ket noi toi database co can doi ten mien trong ALLOWED_HOST = ['*'] khong?
+
+PROBLEM:
+Origin checking failed - https://hai-expenses.up.railway.app does not match any trusted origins.
+ALLOWED_HOSTS khong duoc viet https://hai-expenses.up.railway.app ma phai viet la hai-expenses.up.railway.app

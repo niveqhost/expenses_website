@@ -15,14 +15,14 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="username-field" class="form-label">User Name</label>
-                            <input type="text" class="form-control" id="username-field" name="username" placeholder="Enter username">
+                            <input type="text" class="form-control" id="username-field" name="username" placeholder="Enter username" {% if field_values %}value="{{ field_values.username }}"{% endif %}>
                             <div class="username-valid-feedback valid-feedback" style="display: none"></div>
                             <div class="username-invalid-feedback invalid-feedback" style="display: none"></div>
                         </div>
                         <div class="mb-3">
                             <label for="email-field" class="form-label">Email Address</label>
                             <div id="email-help" class="form-text mb-2">We'll never share your email with anyone else.</div>
-                            <input type="email" name="email" class="form-control" id="email-field" aria-describedby="email-help" placeholder="Enter email">
+                            <input type="email" name="email" class="form-control" id="email-field" aria-describedby="email-help" placeholder="Enter email" {% if field_values %}value="{{ field_values.email }}"{% endif %}>
                             <div class="email-valid-feedback valid-feedback" style="display: none"></div>
                             <div class="email-invalid-feedback invalid-feedback" style="display: none"></div>
                         </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
-                            <button type="submit" class="btn btn-primary mt-3">Register</button>
+                            <button type="submit" class="btn btn-primary mt-3 btn-register">Register</button>
                         </div>
                     </form>
                 </div>

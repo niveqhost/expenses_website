@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Password
     const show_password_toggle = document.querySelector(".show-password-toggle");
     const password_field = document.querySelector("#password-field");
+    const btn_register = document.querySelector(".btn-register");
 
     username_field.addEventListener("keyup", function(event) {
         const username = event.target.value;
@@ -35,12 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     username_valid_feedback.style.display = "none";
                     username_invalid_feedback.style.display = "block";
                     username_invalid_feedback.textContent = `${data.username_error}`;
+                    btn_register.disabled = true;
                 } else {
                     username_field.classList.remove("is-invalid");
                     username_field.classList.add("is-valid");
                     username_invalid_feedback.style.display = "none";
                     username_valid_feedback.style.display = "block";
                     username_valid_feedback.textContent = "Looks good.";
+                    btn_register.removeAttribute("disabled");
                 }
             }).catch(function (error) { throw error; });
         }
@@ -69,12 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     email_valid_feedback.style.display = "none";
                     email_invalid_feedback.style.display = "block";
                     email_invalid_feedback.textContent = `${data.email_error}`;
+                    btn_register.setAttribute("disabled", "true");
                 } else {
                     email_field.classList.remove("is-invalid");
                     email_field.classList.add("is-valid");
                     email_invalid_feedback.style.display = "none";
                     email_valid_feedback.style.display = "block";
                     email_valid_feedback.textContent = "Looks good.";
+                    btn_register.removeAttribute("disabled");
                 }
             }).catch(function (error) { throw error; });
         }

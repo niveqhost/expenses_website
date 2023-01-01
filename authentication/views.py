@@ -53,29 +53,30 @@ class RegistrationView(generic.View):
 
     def post(self, request):
         try:
-            messages.success(request, 'This username is already taken. Please choose another name.')
-            messages.error(request, 'This username is already taken. Please choose another name.')
-            messages.info(request, 'This username is already taken. Please choose another name.')
-            messages.warning(request, 'This username is already taken. Please choose another name.')
-            return render(request=request, template_name=self.template_name)
-            # username = request.POSTget('username')
-            # email = request.POSTget('email')
-            # password = request.POST.get('password')
-            # context = {
-            #     'field_values': request.POST
-            # }
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            context = {
+                'field_values': request.POST
+            }
 
-            # if User.objects.filter(username=username).exists():
-            #     messages.error(request, 'This username is already taken. Please choose another name.')
-            #     return render(request, self.template_name, context)
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'This username is already taken. Please choose another name.')
+                return render(request, self.template_name, context)
 
-            # if User.objects.filter(email=email).exists():
-            #     messages.error(request, 'This email is already taken. Please choose another email.')
-            #     return render(request, self.template_name, context)
+            if User.objects.filter(email=email).exists():
+                messages.error(request, 'This email is already taken. Please choose another email.')
+                return render(request, self.template_name, context)
 
-            # if len(password) < 6:
-            #     messages.error(request, 'Password is too short. Try another password.')
-            #     return render(request, self.template_name, context)
+            if len(password) < 6:
+                messages.error(request, 'Password must be more than 6 characters. Try another password.')
+                return render(request, self.template_name, context)
+
+            user = User.objects.create_user(username=username, email=email)
+            user.set_password(raw_password=password)
+            user.save()
+            messages.success(request, 'User successfully created.')
+            return render(request, self.template_name)
 
         except Exception as ex:
             print('REGISTER VIEW GET REQUEST ERROR: ', ex)

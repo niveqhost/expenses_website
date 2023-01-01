@@ -15,7 +15,6 @@ Link demo ứng dụng : https://hai-expenses.up.railway.app/
 Hình ảnh triển khai ứng dụng:
 
 ![image](https://github.com/niveqhost/expenses_website/blob/main/Screenshot%202023-01-01%20233434.jpg)
-![image]
-![image]
+![image](https://github.com/niveqhost/expenses_website/blob/main/Screenshot%202023-01-01%20233609.jpg)
 
 

@@ -166,9 +166,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# Note files
-note.txt
-
 # Static files
 */static/*
 static/*

@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from decouple import config
 from dotenv import load_dotenv, find_dotenv
+from utils import constants
 
 load_dotenv(find_dotenv())
 
@@ -120,7 +121,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -140,3 +140,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Messages
+MESSAGE_TAGS = constants.MESSAGE_TAGS

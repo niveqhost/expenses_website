@@ -10,6 +10,7 @@
                     <div class="card-title text-center">
                         <h4>Register for a free account</h4>
                     </div>
+                    {% include '_partials/messages.html' %}
                     <form action="" method="POST">
                         {% csrf_token %}
                         <div class="mb-3">
@@ -31,7 +32,7 @@
                                 <input type="password" id="password-field" class="form-control" name="password" aria-describedby="password-help-inline">
                             </div>
                             <div class="col-2">
-                                <span id="password-help-inline" class="form-text">Show</span>
+                                <span id="password-help-inline" class="form-text show-password-toggle">Show</span>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">

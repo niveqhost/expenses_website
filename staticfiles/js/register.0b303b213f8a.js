@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const email_field = document.querySelector("#email-field");
     const email_valid_feedback = document.querySelector(".email-valid-feedback");
     const email_invalid_feedback = document.querySelector(".email-invalid-feedback");
+    // Password
+    const show_password_toggle = document.querySelector(".show-password-toggle");
+    const password_field = document.querySelector("#password-field");
 
     username_field.addEventListener("keyup", function(event) {
         const username = event.target.value;
@@ -74,6 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     email_valid_feedback.textContent = "Looks good.";
                 }
             }).catch(function (error) { throw error; });
+        }
+    });
+
+    show_password_toggle.addEventListener("click", function (event) {
+        if (show_password_toggle.textContent === "Show") {
+            show_password_toggle.textContent = "Hide";
+            password_field.setAttribute("type", "text");
+        } else {
+            show_password_toggle.textContent = "Show";
+            password_field.setAttribute("type", "password");
         }
     });
 });

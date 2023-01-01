@@ -2,10 +2,15 @@
 """Django's command-line utility for administrative tasks."""
 import os, sys
 
+from decouple import config
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
 def main():
     """Run administrative tasks."""
 
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings.local')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', config('DJANGO_SETTINGS_MODULE'))
 
     try:
         from django.core.management import execute_from_command_line

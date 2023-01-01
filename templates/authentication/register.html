@@ -11,7 +11,7 @@
                         <h4>Register for a free account</h4>
                     </div>
                     {% include '_partials/messages.html' %}
-                    <form action="" method="POST">
+                    <form action="{% url 'authentication:register' %}" method="POST">
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="username-field" class="form-label">User Name</label>

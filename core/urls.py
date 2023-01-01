@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('expenses.urls', namespace='expenses'), name='expenses_app'),
     path('account/', include('authentication.urls', namespace='authentication'), name='authentication_app'),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) # Thu muc noi chua cac tep tin css, js, hinh anh
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # Thu muc cho nguoi dung tai len cac hinh anh, am thanh, video,...

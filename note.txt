@@ -1,5 +1,6 @@
 TODO:
 Truoc khi commit va push len git can xoa thu muc staticfiles va chay lenh manage.py collectstatic
+Moi khi tat server thi can xoa app password cua Google Account
 
 QUESTION:
 Khi ket noi toi database co can doi ten mien trong ALLOWED_HOST = ['*'] khong?

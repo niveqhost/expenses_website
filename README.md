@@ -8,7 +8,7 @@ Mở cửa sổ Command Prompt, di chuyển đến thư mục gốc chứa chư�
 pip install -r requirements.txt
 ```
 
-Ứng dụng được triển khai trên nền tảng app RailWay. Railway chỉ hỗ trợ 500 giờ miễn phí mỗi tháng / 20 ngày. Hết 20 ngày hệ thống sẽ tự động bị đóng lại.
+Ứng dụng được triển khai trên nền tảng app RailWay. Railway chỉ hỗ trợ 500 giờ miễn phí mỗi tháng (tương đương 20 ngày). Hết 20 ngày hệ thống sẽ tự động bị đóng lại.
 
 Link demo ứng dụng : https://hai-expenses.up.railway.app/
 

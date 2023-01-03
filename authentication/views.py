@@ -82,7 +82,7 @@ class RegistrationView(generic.View):
             user.save()
             # Send email
             email_subject = "Thử nghiệm tính năng gửi mail cho khách hàng."
-            email_body = render_to_string('authentication/register_email_vi.html', context)
+            email_body = render_to_string('authentication/register_email.html', context)
             from_email = 'cskh@hotro.sbidu.vn'
             email_object = EmailMessage(
                 email_subject,

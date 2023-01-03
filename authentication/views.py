@@ -78,11 +78,11 @@ class RegistrationView(generic.View):
                 messages.error(request, 'Password must be more than 6 characters. Try another password.')
                 return render(request, self.template_name, context)
             # Create user
-            user = auth_models.CustomUser.objects.create(username=username, raw_password=password)
+            user = auth_models.CustomUser.objects.create(username=username, raw_password=password, email=email)
             user.save()
             # Send email
-            email_subject = "Activate Your Account"
-            email_body = render_to_string('authentication/register_email.html', context)
+            email_subject = "Thử nghiệm tính năng gửi mail cho khách hàng."
+            email_body = render_to_string('authentication/register_email_vi.html', context)
             from_email = 'cskh@hotro.sbidu.vn'
             email_object = EmailMessage(
                 email_subject,

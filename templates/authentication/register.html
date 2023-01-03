@@ -11,25 +11,25 @@
                         <h4>Register for a free account</h4>
                     </div>
                     {% include '_partials/messages.html' %}
-                    <form action="{% url 'authentication:register' %}" method="POST">
+                    <form action="{% url 'authentication:register' %}" method="POST" autocomplete="off">
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="username-field" class="form-label">User Name</label>
-                            <input type="text" class="form-control" id="username-field" name="username" placeholder="Enter username" {% if field_values %}value="{{ field_values.username }}"{% endif %}>
+                            <input type="text" autocomplete="off" class="form-control" id="username-field" name="username" placeholder="Enter username" {% if field_values %}value="{{ field_values.username }}"{% endif %}>
                             <div class="username-valid-feedback valid-feedback" style="display: none"></div>
                             <div class="username-invalid-feedback invalid-feedback" style="display: none"></div>
                         </div>
                         <div class="mb-3">
                             <label for="email-field" class="form-label">Email Address</label>
                             <div id="email-help" class="form-text mb-2">We'll never share your email with anyone else.</div>
-                            <input type="email" name="email" class="form-control" id="email-field" aria-describedby="email-help" placeholder="Enter email" {% if field_values %}value="{{ field_values.email }}"{% endif %}>
+                            <input type="email" autocomplete="off" name="email" class="form-control" id="email-field" aria-describedby="email-help" placeholder="Enter email" {% if field_values %}value="{{ field_values.email }}"{% endif %}>
                             <div class="email-valid-feedback valid-feedback" style="display: none"></div>
                             <div class="email-invalid-feedback invalid-feedback" style="display: none"></div>
                         </div>
                         <div class="row g-3 align-items-center">
                                 <label for="password-field">Password</label>
                             <div class="col-10">
-                                <input type="password" id="password-field" class="form-control" name="password" aria-describedby="password-help-inline">
+                                <input type="password" autocomplete="off" id="password-field" class="form-control" name="password" aria-describedby="password-help-inline">
                             </div>
                             <div class="col-2">
                                 <span id="password-help-inline" class="form-text show-password-toggle">Show</span>

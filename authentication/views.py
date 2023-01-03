@@ -7,6 +7,9 @@ from django.http import JsonResponse
 from validate_email import validate_email
 from django.core.mail import EmailMessage
 from django.contrib.auth.models import User
+from django.template.loader import render_to_string
+
+from authentication import models as auth_models
 
 # Create your views here.
 class UsernameValidationView(generic.View):
@@ -58,7 +61,9 @@ class RegistrationView(generic.View):
             email = request.POST.get('email')
             password = request.POST.get('password')
             context = {
-                'field_values': request.POST
+                'username': username,
+                'email': email,
+                'password': password
             }
 
             if User.objects.filter(username=username).exists():
@@ -72,23 +77,23 @@ class RegistrationView(generic.View):
             if len(password) < 6:
                 messages.error(request, 'Password must be more than 6 characters. Try another password.')
                 return render(request, self.template_name, context)
-
-            user = User.objects.create_user(username=username, email=email)
-            user.set_password(raw_password=password)
-            user.is_active = False
+            # Create user
+            user = auth_models.CustomUser.objects.create(username=username, raw_password=password)
             user.save()
-            email_subject = "Activate your account"
-            email_body = "Body goes here"
-            from_email = 'from@example.com'
+            # Send email
+            email_subject = "Activate Your Account"
+            email_body = render_to_string('authentication/register_email.html', context)
+            from_email = 'cskh@hotro.sbidu.vn'
             email_object = EmailMessage(
                 email_subject,
                 email_body,
                 from_email,
                 [email],
             )
+            email_object.content_subtype = "html"
             email_object.send(fail_silently=False)
-            messages.success(request, 'User successfully created.')
+            messages.success(request, 'We sent you an email. Check your inbox.')
             return render(request, self.template_name)
 
         except Exception as ex:
-            print('REGISTER VIEW GET REQUEST ERROR: ', ex)
+            print('REGISTER VIEW POST REQUEST ERROR: ', ex)
